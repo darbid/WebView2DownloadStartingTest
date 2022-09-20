@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -68,9 +69,9 @@ namespace WebView2DownloadStartingTest
             //AddToContainer - simply adds the WebView2 as a child to a grid
             //AddToCollection - simply adds the webview2 to an itemscontrol (which is what I am using in my project)
             //************
-
-            AddToContainer(e.Uri);
-            //AddToCollection(e.Uri);
+            
+            //AddToContainer(e.Uri);
+            AddToCollection(e.Uri);
         }
 
         private void AddToContainer(string aUrl)

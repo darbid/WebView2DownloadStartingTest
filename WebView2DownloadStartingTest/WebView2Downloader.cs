@@ -47,6 +47,12 @@ namespace WebView2DownloadStartingTest
 
         private void CoreWebView2_DownloadStarting(object? sender, CoreWebView2DownloadStartingEventArgs e)
         {
+            System.Diagnostics.Debug.Print("##############################   CoreWebView2_DownloadStarting   ###############################################");
+            System.Diagnostics.Debug.Print("State: " + e.DownloadOperation.State.ToString());
+            System.Diagnostics.Debug.Print("TotalBytesToReceive: " + e.DownloadOperation.TotalBytesToReceive.ToString());
+            System.Diagnostics.Debug.Print("BytesReceived: " + e.DownloadOperation.BytesReceived.ToString());
+            System.Diagnostics.Debug.Print("##############################   CoreWebView2_DownloadStarting   ###############################################");
+
             CoreWebView2Deferral deferral = e.GetDeferral();
 
             using (deferral)

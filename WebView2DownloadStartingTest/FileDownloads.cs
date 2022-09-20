@@ -18,9 +18,9 @@ namespace WebView2DownloadStartingTest
 
         private void Operation_StateChanged(object? sender, object e)
         {
-            System.Diagnostics.Debug.Print("##############################   DownloadOperation_BytesReceivedChanged   ###############################################");
+            System.Diagnostics.Debug.Print("##############################   Operation_StateChanged   ###############################################");
             System.Diagnostics.Debug.Print("State: " + Operation.State.ToString());
-            System.Diagnostics.Debug.Print("##############################   DownloadOperation_BytesReceivedChanged   ###############################################");
+            System.Diagnostics.Debug.Print("##############################   Operation_StateChanged   ###############################################");
         }
 
         private void Operation_BytesReceivedChanged(object? sender, object e)
