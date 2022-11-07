@@ -30,11 +30,14 @@ namespace WebView2DownloadStartingTest
         {
             await this.EnsureCoreWebView2Async(null);
 
-            _ = this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.SystemIdle, new Action(async () =>
-            {
-                if (UseTaskDelay) await Task.Delay(1000);
-                if (Url != null) this.Source = new Uri(Url);
-            }));
+            if (UseTaskDelay) await Task.Delay(1000);
+            if (Url != null) this.Source = new Uri(Url);
+
+            //_ = this.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.SystemIdle, new Action(async () =>
+            //{
+            //    if (UseTaskDelay) await Task.Delay(1000);
+            //    if (Url != null) this.Source = new Uri(Url);
+            //}));
         }
 
         private void IPSurferTempBrowser_CoreWebView2InitializationCompleted(object? sender, CoreWebView2InitializationCompletedEventArgs e)
